@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Sabor Colombiano | Flor Maria Rojas</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        background: #f4fff6;
+      }
+      .navbar {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 8%;
+        background: white;
+        box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        position: sticky;
+        top: 0;
+        z-index: 20;
+      }
+      .logo {
+        color: #0b5d1e;
+        font-size: 22px;
+      }
+      .menu-principal {
+        display: flex;
+        list-style: none;
+        gap: 15px;
+      }
+      .menu-principal a {
+        text-decoration: none;
+        color: #333;
+        font-weight: bold;
+        padding: 8px 14px;
+        border-radius: 20px;
+        cursor: pointer;
+      }
+      .menu-principal a.active,
+      .menu-principal a:hover {
+        background: #0b5d1e;
+        color: white;
+      }
+      .banner {
+        background: linear-gradient(90deg, #0b5d1e, #27ae60, #a8e6a3);
+        color: white;
+        text-align: center;
+        padding: 60px 20px;
+      }
+      .banner h2 {
+        font-size: 32px;
+      }
+      .contenedor-comida {
+        max-width: 1100px;
+        margin: 40px auto;
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 30px;
+        padding: 0 20px;
+      }
+      .cuadro-comida {
+        background: white;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+      }
+      .cuadro-comida img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+        display: block;
+      }
+      .cuadro-azul {
+        background: #7ff0e0;
+        padding: 20px;
+        text-align: center;
+      }
+      .cuadro-azul h3 {
+        color: #0a3d62;
+      }
+      .cuadro-azul p {
+        color: #0a3d62;
+        font-size: 14px;
+        margin: 8px 0 12px;
+      }
+      .btn-pedido {
+        display: inline-block;
+        background: #0b5d1e;
+        color: white;
+        padding: 10px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-weight: bold;
+      }
+      .seccion {
+        display: none;
+        max-width: 600px;
+        margin: 50px auto;
+        background: white;
+        padding: 40px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+      }
+      .seccion.activa {
+        display: block;
+      }
+      .seccion h2 {
+        color: #0b5d1e;
+        text-align: center;
+        margin-bottom: 20px;
+      }
+      .seccion input,
+      .seccion textarea {
+        width: 100%;
+        padding: 12px;
+        margin: 10px 0;
+        border: 2px solid #a8e6a3;
+        border-radius: 8px;
+      }
+      .seccion button {
+        width: 100%;
+        padding: 12px;
+        background: #0b5d1e;
+        color: white;
+        border: none;
+        border-radius: 25px;
+        font-weight: bold;
+        cursor: pointer;
+      }
+      footer {
+        background: #0b5d1e;
+        color: white;
+        text-align: center;
+        padding: 25px;
+        margin-top: 50px;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <h1 class="logo">Sabor Colombiano 🌿</h1>
+        <ul class="menu-principal">
+          <li>
+            <a id="btn-inicio" class="active" onclick="mostrar('inicio')"
+              >Inicio</a
+            >
+          </li>
+          <li>
+            <a id="btn-registro" onclick="mostrar('registro')">Registro</a>
+          </li>
+          <li>
+            <a id="btn-contacto" onclick="mostrar('contacto')">Contacto</a>
+          </li>
+          <li>
+            <a id="btn-direccion" onclick="mostrar('direccion')">Dirección</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <div id="inicio">
+      <section class="banner">
+        <h2>¡El Auténtico Sabor de Nuestra Tierra!</h2>
+        <p>Por Flor Maria Rojas - ParqueSoft TI</p>
+      </section>
+      <section class="contenedor-comida">
+        <div class="cuadro-comida">
+          <img
+            src="img/ajiaco.jpg"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1547592180-85f173990554'
+            "
+          />
+          <div class="cuadro-azul">
+            <h3>Ajiaco Santafereño</h3>
+            <p>Con pollo, papas y crema.</p>
+            <a
+              href="https://wa.me/573000000000"
+              target="_blank"
+              class="btn-pedido"
+              >Hacer Pedido</a
+            >
+          </div>
+        </div>
+        <div class="cuadro-comida">
+          <img
+            src="img/mojarra.jpg"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1519708227418-c8fd9a32b7a2'
+            "
+          />
+          <div class="cuadro-azul">
+            <h3>Mojarra Frita</h3>
+            <p>Con arroz con coco y patacón.</p>
+            <a
+              href="https://wa.me/573000000000"
+              target="_blank"
+              class="btn-pedido"
+              >Hacer Pedido</a
+            >
+          </div>
+        </div>
+        <div class="cuadro-comida">
+          <img
+            src="img/sobrebarriga.jpg"
+            onerror="
+              this.src =
+                'https://images.unsplash.com/photo-1546964053-d293d0eabbb1'
+            "
+          />
+          <div class="cuadro-azul">
+            <h3>Sobrebarriga al Horno</h3>
+            <p>Jugosa, con papas a la llanera.</p>
+            <a
+              href="https://wa.me/573000000000"
+              target="_blank"
+              class="btn-pedido"
+              >Hacer Pedido</a
+            >
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <div id="registro" class="seccion">
+      <h2>Registro de Cliente</h2>
+      <form>
+        <input type="text" placeholder="Nombre completo" required /><input
+          type="email"
+          placeholder="Correo"
+          required
+        /><input type="tel" placeholder="Teléfono" /><input
+          type="password"
+          placeholder="Contraseña"
+          required
+        /><button>Registrarse</button>
+      </form>
+    </div>
+    <div id="contacto" class="seccion">
+      <h2>Contáctanos</h2>
+      <form>
+        <input type="text" placeholder="Tu nombre" /><input
+          type="email"
+          placeholder="Tu correo"
+        /><textarea rows="5" placeholder="Tu mensaje"></textarea
+        ><button>Enviar Mensaje</button>
+      </form>
+    </div>
+    <div id="direccion" class="seccion">
+      <h2>Nuestra Dirección</h2>
+      <p style="text-align: center; color: #0a3d62">
+        <b
+          >Cra 10 # 15-20, Bogotá<br />Barrio La Candelaria<br />Tel: 300 000
+          0000</b
+        >
+      </p>
+      <iframe
+        style="
+          width: 100%;
+          height: 300px;
+          border: 0;
+          border-radius: 15px;
+          margin-top: 20px;
+        "
+        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3976.8!2d-74.07!3d4.59!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDTCsDM1JzI0LjAiTiA3NMKwMDQnMTIuMCJX!5e0!3m2!1ses!2sco!4v1"
+      ></iframe>
+    </div>
+
+    <footer><p>© 2026 Flor Maria Rojas - ParqueSoft TI</p></footer>
+    <script>
+      function mostrar(id) {
+        document.getElementById("inicio").style.display =
+          id === "inicio" ? "block" : "none";
+        document
+          .querySelectorAll(".seccion")
+          .forEach((s) => s.classList.remove("activa"));
+        if (id !== "inicio")
+          document.getElementById(id).classList.add("activa");
+        document
+          .querySelectorAll(".menu-principal a")
+          .forEach((a) => a.classList.remove("active"));
+        document.getElementById("btn-" + id).classList.add("active");
+      }
+    </script>
+  </body>
+</html>
